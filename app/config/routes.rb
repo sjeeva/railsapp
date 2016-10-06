@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'info/index'
+  # get 'info/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   # NOTE: added below line for info controller
   root 'info#index'
+  get 'json' => 'info#json'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
