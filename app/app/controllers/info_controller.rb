@@ -1,14 +1,16 @@
 class InfoController < ApplicationController
+  require 'socket'
   $hitcount = 0
+  $hostname = Socket.gethostname
+  $local_ip = Socket.gethostbyname($hostname)
   def index
   end
 
   def json
-    require 'socket'
     $hitcount += 1
     render json: {
-                  "Hostname" => "#{Socket.gethostname}",
-                  "Local Address" => "#{request.host}",
+                  "Hostname" => "#{$hostname}",
+                  "Local Address" => "#{$local_ip}",
                   "Remote Address" => "#{request.remote_ip}",
                   "Hit Count" => "#{$hitcount}"
                  }
