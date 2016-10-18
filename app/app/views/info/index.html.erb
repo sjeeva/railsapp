@@ -4,12 +4,15 @@
     border-collapse: collapse;
   }
 </style>
-<% require 'socket' %>
 <% $hitcount += 1 %>
 <table style=" border: 1px solid black" >
   <tr>
+    <th>Start Time</th>
+    <td><%= $start_time %>
+  </tr>
+  <tr>
     <th>Local Hostname</th>
-    <td><%= Socket.gethostname %>
+    <td><%= $hostname %>
   </tr>
   <tr>
     <th>Local Address</th>
