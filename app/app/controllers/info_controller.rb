@@ -2,7 +2,7 @@ class InfoController < ApplicationController
   require 'socket'
   $hitcount = 0
   $hostname = Socket.gethostname
-  $local_ip = Socket.gethostbyname($hostname)
+  $local_ip = IPSocket.getaddress($hostname)
   $start_time = Time.now.strftime('%Y/%m/%d %H:%M:%S')
   
   def index
