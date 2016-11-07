@@ -4,6 +4,7 @@ class InfoController < ApplicationController
   $hostname = Socket.gethostname
   $local_ip = Socket.gethostbyname($hostname)
   $start_time = Time.now.strftime('%Y/%m/%d %H:%M:%S')
+  
   def index
   end
 
